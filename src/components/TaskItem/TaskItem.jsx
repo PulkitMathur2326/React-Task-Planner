@@ -34,7 +34,7 @@ export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
  
       <div className="task-item__states">
         {['To-Do', 'In-Progress', 'Done'].map(state => (
-          <label key={state}>
+          <label key={state} className="task-item__state-label">
             <input
               type="checkbox"
               checked={task.state === state}
