@@ -1,0 +1,32 @@
+.header {
+    text-align: center;
+    padding: 1rem;
+    background-color: #FFDBDB;
+
+    &__title {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__sub {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    &__sub-title {
+        font-size: 1.2rem;
+    }
+
+    &__add-btn {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        background: orange;
+        height: rem(40px, 16px);
+        width: rem(40px, 16px);
+        color: black;
+        border: none;
+        border-radius: rem(30px, 16px);
+    }
+}
