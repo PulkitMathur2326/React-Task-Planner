@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
 import Header from './components/Header/Header';
 import TaskList from './components/TaskList/TaskList';
- 
-const STORAGE_KEY = 'task-planner-tasks';
- 
+
+const STORAGE_KEY = 'task-planner-tasks';  
+
 export default function App() {
   const [tasks, setTasks] = useState([]);
+  const [hasLoaded, setHasLoaded] = useState(false);
  
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
       setTasks(JSON.parse(stored));
+      setHasLoaded(true);
     }
   }, []);
  
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    if (hasLoaded) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+    }
   }, [tasks]);
  
   const addTask = () => {
@@ -30,7 +34,7 @@ id: Date.now(),
  
   const updateTask = (id, newDesc) => {
 setTasks(tasks.map(task =>
-task.id === id ? { ...task, description: newDesc } : task
+task.id === id ? { ...task, description: newDesc, isEditing: false} : task
     ));
   };
  

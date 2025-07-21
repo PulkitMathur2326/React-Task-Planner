@@ -4,10 +4,10 @@ import './_task-item.scss';
 export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
   const [isEditing, setIsEditing] = useState(task.isEditing || false);
   const [desc, setDesc] = useState(task.description);
- 
+  
   const handleEdit = () => {
-    if (isEditing) {
-      onEdit(task.id, desc);
+    if (isEditing && desc.trim()) {
+      onEdit(task.id, desc.trim());
     }
     setIsEditing(!isEditing);
   };
@@ -21,6 +21,7 @@ export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
           onKeyDown={(e) => {if (e.key === 'Enter') handleEdit()}}
+          autofocus
         />
       ) : (
         <p className="task-item__desc">{task.description}</p>
