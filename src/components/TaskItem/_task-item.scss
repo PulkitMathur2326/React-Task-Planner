@@ -28,6 +28,7 @@
 
   &__button {
     border-radius: 1rem;
+    background-color: rgb(245, 245, 159);
   }
  
   &__states {
@@ -40,6 +41,11 @@
     display: flex;
     align-items: center;
     gap: 0.25rem;
-    font-size: 0.95rem;
+    font-size: 1.25rem;
+  }
+
+  &__checkbox {
+    height: 1.25rem;
+    width: 1.25rem;
   }
 }

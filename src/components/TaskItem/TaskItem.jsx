@@ -20,7 +20,14 @@ export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
           className="task-item__desc-input"
           value={desc}
           onChange={(e) => setDesc(e.target.value)}
-          onKeyDown={(e) => {if (e.key === 'Enter') handleEdit()}}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+                handleEdit();
+            }
+            else if (e.key === 'Escape') {
+                setIsEditing(false);
+            }
+          }}
           autofocus
         />
       ) : (
@@ -37,6 +44,7 @@ export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
           <label key={state} className="task-item__state-label">
             <input
               type="checkbox"
+              className="task-item__checkbox"
               checked={task.state === state}
               onChange={() => onStateChange(task.id, state)}
             />
