@@ -28,8 +28,8 @@ export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
       )}
  
       <div className="task-item__actions">
-        <button onClick={handleEdit}>{isEditing ? 'Done' : 'Edit'}</button>
-        <button onClick={() => onDelete(task.id)}>Delete</button>
+        <button className = "task-item__button" onClick={handleEdit}>{isEditing ? 'Done' : 'Edit'}</button>
+        <button className = "task-item__button" onClick={() => onDelete(task.id)}>Delete</button>
       </div>
  
       <div className="task-item__states">
