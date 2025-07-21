@@ -7,7 +7,6 @@ const STORAGE_KEY = 'task-planner-tasks';
 export default function App() {
   const [tasks, setTasks] = useState([]);
  
-  // Load tasks from localStorage
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored) {
@@ -15,7 +14,6 @@ export default function App() {
     }
   }, []);
  
-  // Save to localStorage on change
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
   }, [tasks]);
@@ -25,6 +23,7 @@ export default function App() {
 id: Date.now(),
       description: 'New Task',
       state: 'To-Do',
+      isEditing: true
     };
     setTasks([...tasks, newTask]);
   };
