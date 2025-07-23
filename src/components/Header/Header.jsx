@@ -1,4 +1,4 @@
-import './_header.scss';
+import '../../styles/components/_header.scss';
 
 export default function Header({onAddTask}) {
     return (

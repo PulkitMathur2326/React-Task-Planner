@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './_task-item.scss';
+import '../../styles/components/_task-item.scss';
  
 export default function TaskItem({ task, onEdit, onDelete, onStateChange }) {
   const [isEditing, setIsEditing] = useState(task.isEditing || false);
