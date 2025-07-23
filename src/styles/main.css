@@ -388,6 +388,7 @@ template {
 }
 .task-item__button {
   border-radius: 1rem;
+  background-color: rgb(245, 245, 159);
 }
 .task-item__states {
   display: flex;
@@ -398,5 +399,9 @@ template {
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
+}
+.task-item__checkbox {
+  height: 1.25rem;
+  width: 1.25rem;
 }/*# sourceMappingURL=main.css.map */
