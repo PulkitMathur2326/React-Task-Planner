@@ -5,6 +5,6 @@
 @import "base/base";
 @import "base/normalize";
 
-@import "../styles/components/header";
-@import "../styles/components/task-list";
-@import "../styles/components/task-item";
+@import "../components/Header/header";
+@import "../components/TaskItem/task-item";
+@import "../components/TaskList/task-list";

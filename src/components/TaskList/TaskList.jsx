@@ -1,4 +1,4 @@
-import '../../styles/components/_task-item.scss';
+import './_task-list.scss';
 import TaskItem from '../TaskItem/TaskItem';
 
 export default function TaskList({ tasks, onEdit, onDelete, onStateChange }) {
